@@ -1,0 +1,48 @@
+{
+  "type": "automation",
+  "metadata": {},
+  "schema": {
+    "name": "bb-automation-openai",
+    "tagline": "Interact with the OpenAI ChatGPT API.",
+    "icon": "Actions",
+    "description": "Interact with the OpenAI ChatGPT API.",
+    "type": "action",
+    "stepId": "bb-automation-openai",
+    "inputs": {
+      "prompt": ""
+    },
+    "schema": {
+      "inputs": {
+        "properties": {
+          "openai_api_key": {
+            "type": "string",
+            "title": "OpenAI API Key"
+          },
+          "prompt": {
+            "type": "string",
+            "title": "Prompt"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "enum": ["gpt-3.5-turbo", "gpt-4"]
+          }
+        },
+        "required": ["prompt", "model"]
+      },
+      "outputs": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the action was successful"
+          },
+          "response": {
+            "type": "string",
+            "description": "What was output"
+          }
+        },
+        "required": ["success", "response"]
+      }
+    }
+  }
+}
